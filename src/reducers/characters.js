@@ -1,13 +1,15 @@
 import { GET_CHARACTERS, GET_CHARACTERS_FAILURE, GET_CHARACTERS_SUCCESS } from '../constants'
 
-const charactersReducer = (state = { data: null, loading: false, error: null }, action) => {
+const charactersInitialState = { data: null, loading: false, error: null }
+
+const charactersReducer = (state = charactersInitialState, action) => {
   switch (action.type) {
   case GET_CHARACTERS:
-    return { data: null, loading: true, error: null }
+    return { ...state, loading: true }
   case GET_CHARACTERS_SUCCESS:
-    return { data: action.data, loading: false, error: null }
+    return { ...state, data: action.data, loading: false }
   case GET_CHARACTERS_FAILURE:
-    return { data: null, loading: false, error: action.error }
+    return { ...state, error: action.error, loading: false }
   default:
     return state
   }
