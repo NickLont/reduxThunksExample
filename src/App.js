@@ -1,13 +1,13 @@
 import './App.css'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { initListings } from './actions'
+import { getCharactersAction } from './actions'
 
 function App () {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(initListings())
+    dispatch(getCharactersAction())
   }, [])
 
   return (

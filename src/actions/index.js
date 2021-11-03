@@ -1,5 +1,5 @@
-import { initListings } from './listings'
+import { getCharactersAction } from './characters'
 
 export {
-  initListings
+  getCharactersAction
 }
