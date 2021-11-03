@@ -16,7 +16,7 @@ export const getCharactersAction = () => {
     } catch (e) {
       dispatch({
         type: GET_CHARACTERS_FAILURE,
-        data: e
+        error: JSON.stringify(e.response.status)
       })
     }
   }
